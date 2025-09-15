@@ -1,1 +1,11 @@
 # PA-3
+
+For the first problem, we are tasked to get the first and last 5 entries in the car dataframe. This is done simply with the functions head() and tail(). The parameters of which indicate how many entries to display. To get the first five, we simply need to put 5 as an argument of the function head(), and it will return the first five. In the same vein, using 5 as an argument for the tail() function will yield the last five entries.
+
+For the second problem, we are given 4 sub-problems. The first of which asks us to get the first five entries and then only display the odd-numbered columns of those 5 entries. We can use the function iloc[]. For the first part of the problem, taking the first five, we can use the argument :5, which takes the first 5 entires of the data frame. Next, to get only odd numbered columns, we can use the argument ::2 which indicates that it will only display every other column. 
+
+The second asks us to display only the row that has the model Mazda RX4. We can index it with the conditon of cars['Model'] == 'Mazda RX4' in the variable cars[]. Essentially, what it does is it checks each row, matching the condition of 'Mazda RX4' to the model column. When it finds said row, it will only display that.
+
+The third asks us to find a specific data of the model 'Camaro Z28’. We use cars.loc[] and the condition cars['Model'] == 'Camaro Z28', 'cyl' to first display only the row of the model 'Camaro Z28' then take the cyl column which returns the value 8. 
+
+The fourth and last problem asks us to display the number of cyl and the gear type (gear) for three specific car models — Mazda RX4 Wag, Ford Pantera L, and Honda Civic. To do this, we can use the function loc[]. Inside loc[], we use the condition cars['Model'].isin(['Mazda RX4 Wag', 'Ford Pantera L', 'Honda Civic']), where the list contains the models we are looking for. The function isin() checks whether each row’s Model value is one of the items in the list, and returns only those rows that match. After filtering, we then specify the columns we want to display by adding ['Model', 'cyl', 'gear']. This ensures that the output only shows the model names together with their corresponding cylinders and gear types.
